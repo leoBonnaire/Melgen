@@ -41,6 +41,7 @@ The settings in a .mel file starts with a `-` + the setting name, then ` : ` and
 **Exemple**
 
 > `- Title : Melgen` is valid
+
 > `- Title :Melgen` or `- Title: Melgen` or `-Title : Melgen` is not valid
 
 The setting is `Title` correspond to the title of the story
