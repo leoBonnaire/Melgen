@@ -72,9 +72,9 @@ The indicator is the character writen at the end of a sentence, when the reader 
 
 By default it's `[]` but you can put anything if you respect the correct writing for the settings.
 
-#### Start writing the story
+### Start writing the story
 
-##### Create a text part
+#### Create a text part
 
 If you took the `template.mel` file, there should already be some text parts created, such as the most important one : `start`. It is the first text part, the one your story will starts with.
 
@@ -86,7 +86,7 @@ The next line must be `>`. At the next line after this, you can start typing the
 
 The only ways a part can end is by opening a new one or being at the end of the file.
 
-##### Writing text
+#### Writing text
 
 After opening a text part, you can write you text as you were writing on a .txt file. You can just type your text.
 
@@ -98,13 +98,13 @@ If you're not sure how it works, just take a look inside the `template.mel` file
 
 **Tips** : Putting spaces inside a text in TypeWriter mode create a pause when writing.
 
-##### Melgen commands
+### Melgen commands
 
 The commands are the MOST important thing with Melgen. It is what allows you to link text parts, make the user win, or lose.
 
 A command is writtin between two `[]` like `[ask]` then you put a space, and then your arguments. Take a look below to see exemples.
 
-**Commands must be writen alone on a single line !!**
+**Commands must be writen alone on a single line !! You also have to put a `>` before writing a command (on the line above)**
 
 There is a list of all the commands you can use :
 

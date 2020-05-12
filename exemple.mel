@@ -1,13 +1,13 @@
 
 # WELCOME TO MELGEN #
-## This is the template file
+## This is an exemple for a Melgen story
 ## Setup settings and start typing the story
 
 
 ## Settings ##
 
 # Title of the text
-- Title : Melgen Template
+- Title : The story of Melgen
 
 # Default color for the text (hex)
 - Color : #d9d9d9
@@ -19,7 +19,7 @@
 - Typemode : type
 
 # Indicator at the end of a text in typewriter mode
-- Indicator : []
+- Indicator : |
 
 
 ## Story ##
@@ -27,13 +27,21 @@
 # Starting block
 !start
 >
-Hello World !
-It's time to choose
+Welcome to the Melgen World.
+That is where your story will take place.
+                       In that dark universe                     ...
+Let me shine everything up.
+>
+[color] #1d1e21
+>
+[bgColor] #d9d9d9
+>
+As you can see, I reversed the colors
 >
 [ask] Take me to the win !|Let's see dying feels like
 
 # When you get outside
-!Take me to the other side !
+!Take me to the win !
 >
 Let me show you a way out
 >
