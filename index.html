@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"
+ style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+ unselectable="on"
+ onselectstart="return false;"
+ onmousedown="return false;"
+>
+
+  <head>
+    <title id="titel"></title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Charlie Brown" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+	  <link rel="stylesheet" type="text/css" href="css/w3.css">
+	  <link rel="stylesheet" type="text/css" href="css/monolog.css">
+	 <script src="monolog.js"></script>
+   <script src="generator.js"></script>
+   <script src="main.js"></script>
+   <script>
+     let story;
+     let openFile = function(event) {
+       let input = event.target;
+
+       let reader = new FileReader();
+       reader.onload = function(){
+         story = reader.result;
+       };
+       reader.readAsText(input.files[0]);
+     };
+   </script>
+  </head>
+
+  <body>
+
+    <div class="menu" id="menu">
+      <div class="container">
+        <h1>Melgen</h1>
+        <h2>Story reader generator</h2>
+        <h4>Put your file and click on generate to start reading.</h4>
+        <br>
+        <form onsubmit="return generate();">
+          <p>
+            Story file :
+            <input type='file' accept='text/plain' onchange='openFile(event)'>
+          </p>
+          <input type="submit" name="" value="Generate">
+        </form>
+      </div>
+    </div>
+
+    <div class="game" id="game" style="display: none">
+      <div class="pages-stack">
+        <div class="page" id="file">
+          <header class="bp-header cf">
+            <span id="storyTitle" class="bp-header__present w3-animate-left"></span>
+          </header>
+
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 id="endMessage"></h2>
+              </div>
+            </div>
+          </div>
+
+          <span id="mode" class="w3-animate-right">Type mode : TypeWriter</span>
+          <span id="speed" class="w3-animate-right">Text speed : 90 %</span>
+
+          <button onclick="" class="w3-animate-zoom askButton" style="left:0px" id="button1"></button>
+          <button onclick="" class="w3-animate-zoom askButton" style="right:0px" id="button2"></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

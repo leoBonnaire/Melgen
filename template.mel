@@ -1,0 +1,47 @@
+
+# WELCOME TO MELGEN #
+## This is the story file
+## Setup settings and start typing the story
+
+
+## Settings ##
+
+# Title of the text
+- Title : Melgen
+
+# Default color for the text (hex)
+- Color : #d9d9d9
+
+# Default background color (hex)
+- Background-color : #1d1e21
+
+# Default type mode (can be type or fast)
+- Typemode : type
+
+# Indicator at the end of a text in typewriter mode
+- Indicator : []
+
+
+## Story ##
+
+# Starting block
+!start
+>
+Hello World !
+It's time to choose
+>
+[ask] Take me to the other side !|Inside
+
+# When you get outside
+!Take me to the other side !
+>
+Ok then
+>
+[win] Hell yeah
+
+# When you stay
+!Inside
+>
+Ok then
+>
+[die] Hell yeah
