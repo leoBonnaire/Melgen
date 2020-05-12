@@ -90,30 +90,32 @@ function say(text, colore) {  // Function to write the text on the screen
 }
 
 document.addEventListener('keypress', function(key) {
-	if(key.key === "p") {
-		if(time - 5 > 0)  // Do not go under 0 for time
-		  time -= 5;  // If it's okay, decrease the time and increase the text speed
-		textSpeed = 100 - (time * 100 / 250); // Calcul text speed
-		document.getElementById('speed').innerHTML = 'Text speed : '+ textSpeed +' %'; // Calcul text speed
-	}
-	else if(key.key == "m") {
-		if(time + 5 < 250)  // Do not go over 250 for time
-			time += 5; // If it's okay, increase the time and decrease the text speed
-		textSpeed = 100 - (time * 100 / 250); // Calcul text speed
-		document.getElementById('speed').innerHTML = 'Text speed : '+ textSpeed +' %'; // Calcul text speed
-	}
-	else if(key.key === "l") {
-		if(mode == 'type') {
-		  mode = 'fast';  // Change mode to fast (slide) if the current mode is typeWriting
-		  document.getElementById('mode').innerHTML = 'Type mode : Slide';  // Write the type mode on page
+	if(gameStarted) {
+		if(key.key === "p") {
+			if(time - 5 > 0)  // Do not go under 0 for time
+			  time -= 5;  // If it's okay, decrease the time and increase the text speed
+			textSpeed = 100 - (time * 100 / 250); // Calcul text speed
+			document.getElementById('speed').innerHTML = 'Text speed : '+ textSpeed +' %'; // Calcul text speed
 		}
-		else {
-		  mode = 'type';  // Change mode to type if the current mode is slide
-		  document.getElementById('mode').innerHTML = 'Type mode : TypeWriter';  // Write the type mode on page
+		else if(key.key == "m") {
+			if(time + 5 < 250)  // Do not go over 250 for time
+				time += 5; // If it's okay, increase the time and decrease the text speed
+			textSpeed = 100 - (time * 100 / 250); // Calcul text speed
+			document.getElementById('speed').innerHTML = 'Text speed : '+ textSpeed +' %'; // Calcul text speed
 		}
+		else if(key.key === "l") {
+			if(mode == 'type') {
+			  mode = 'fast';  // Change mode to fast (slide) if the current mode is typeWriting
+			  document.getElementById('mode').innerHTML = 'Type mode : Slide';  // Write the type mode on page
+			}
+			else {
+			  mode = 'type';  // Change mode to type if the current mode is slide
+			  document.getElementById('mode').innerHTML = 'Type mode : TypeWriter';  // Write the type mode on page
+			}
+		}
+		else if(key.keyCode !== 122 && key.keyCode !== 27)  // Any key pressed but not F11 and echap
+	    continu(); // Go for the play
 	}
-	else if(key.keyCode !== 122 && key.keyCode !== 27)  // Any key pressed but not F11 and echap
-    continu(); // Go for the play
 });
 
 document.addEventListener('click', function() {
@@ -123,33 +125,29 @@ document.addEventListener('click', function() {
 function continu() {  // Let's play
   if(!isWriting && !buttonsOn && !gameOver) {  // If text is not writing and the button are not displayed
 		if(dialog[i].includes('[color] ')) {  // If the dialog contains "color : "
-		  dialog[i] = dialog[i].replace("[color] ", "");  // Erase "color : " and just keep the color
-		  colore = dialog[i]; // Update the color
+		  colore = dialog[i].replace("[color] ", ""); // Update the color
 		  i++;  // Go to next dialog
+			continu();
 		}
-		if(dialog[i].includes('[bgColor] ')) { // If the dialog contains "bgColor : "
-		  dialog[i] = dialog[i].replace("[bgColor] ", "");  // Erase "bgColor : " and just keep the color
-		  document.body.style.background = dialog[i];  // Update the bg color
+		else if(dialog[i].includes('[bgColor] ')) { // If the dialog contains "bgColor : "
+		  document.body.style.background = dialog[i].replace("[bgColor] ", "");  // Update the bg color
 		  i++;  // Go to next dialog
+			continu();
 		}
 
-		if(dialog[i].includes('[ask] ')) { // If the dialog contains "[ask]"
-		  dialog[i] = dialog[i].replace('[ask] ', ''); // Erase "[ask]" and keep the propositions
-		  ask(dialog[i].split("|")[0], dialog[i].split("|")[1]); // Ask function with the first proposition (before the | and the second after)
+		else if(dialog[i].includes('[ask] ')) { // If the dialog contains "[ask]"
+		  ask(dialog[i].replace('[ask] ', '').split("|")[0], dialog[i].replace('[ask] ', '').split("|")[1]); // Ask function with the first proposition (before the | and the second after)
 		}
 		else if(dialog[i].includes('[goto] ')) { // If the dialog contains "goto : "
-		  dialog[i] = dialog[i].replace('[goto] ', ''); // Erase "goto : " and keep the path
-		  setPath(dialog[i]);  // set the right path
-		  continu(13);  // Continue the game
+		  setPath(dialog[i].replace('[goto] ', ''));  // set the right path
+		  continu();  // Continue the game
 		}
 		else if(dialog[i] === "[removeAll]") removeAll(); // If the dialog is ".removeAll." remove everyyhing on the page
 		else if(dialog[i].includes("[win] ")) { // If the dialog contains ".win."
-		  dialog[i] = dialog[i].replace('[win] ', '');  // Erase ".win."
-		  win(dialog[i]); // Display the message left
+		  win(dialog[i].replace('[win] ', '')); // Display the message left
 		}
 		else if(dialog[i].includes("[die] ")) { // If the dialog is ".die." Kill the player
-		  dialog[i] = dialog[i].replace('[die] ', '');  // Erase ".die."
-		  death(dialog[i]); // Display the message left
+		  death(dialog[i].replace('[die] ', '')); // Display the message left
 		}
 		else {
 		  say(dialog[i], colore); i++; // Finally, say the dialog.

@@ -134,6 +134,8 @@ If the user click on "Take three steps forward" then Melgen will load the text p
 
 * **`bgColor`** : Changes the color of the background. Same use as the [color] command.
 
+**YOU CAN'T PUT TWO COLOR COMMANDS NEXT TO EACH OTHER** (I might patch that one day)
+
 * **`removeAll`** : Empty the page. Take no arguments. The only way of using it is :
 
 `[removeAll]`

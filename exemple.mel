@@ -28,28 +28,164 @@
 !start
 >
 Welcome to the Melgen World.
-That is where your story will take place.
-                       In that dark universe                     ...
-Let me shine everything up.
+             That is where your story will take place.
+                   In that dark universe                      ...
 >
-[color] #1d1e21
+Maybe you'll recognize this place as a similar one.
+                I think it was SilverHeart               ...        Not pretty sure.
+>
+[ask] I know what SilverHeart is. I'm so wise|SilverHeart ? What is this ?
+
+# You know SilverHeart
+!I know what SilverHeart is. I'm so wise
+>
+Oh               I see,                      a man of culture as well
+              Let me tell you ...                   SilverHeart was not made using Melgen.
+     So there's no SilverHeart.mel file.
+>
+Still,                 SilverHeart inspired Melgen.                           Its source code is the base of Melgen.
+                 What that means is that you know exactly what a Melgen story can be.
+                 It is a "SilverHeart-like".
+        So I guess you know enough ...                  You can write your own Melgen story !
+                      Let me offer you the pleasure of winning,                  wise one.
+>
+[win] May you live in peace, wise one.
+
+# You don't know SilverHeart
+!SilverHeart ? What is this ?
+>
+Hum                I know it too well   ...
+             That place ...                     Where the wizards are hunted by the humans.              For no visible reasons                 ...
+                      Or maybe that's just what you think.
+             In fact, there's a reason.                        But they don't even know it themself   ...
+                Let me tell you the story of a merchant                  ...              the purple merchant
+>
+I'll send you to SilverHeart ...                   Before its creation
+
+>
+[goto] Go to see the gates of SilverHeart
+
+# Gates of SilverHeart, meeting with Robert
+!Go to see the gates of SilverHeart
+>
+[bgColor] black
+>
+[color] white
+>
+(Robert) Oh,               hello you !
+           My name is Robert. And you are ?
+>
+[ask] I don't know, I lost my parents ...|I'm a visitor coming from the future
+
+!I don't know, I lost my parents ...
+>
+[bgColor] #1d1e21
+>
+             Oh I'm sorry for you little one !
+         You know what ?                 I'll carry you with me for a time.
+             What do you think of that ?
+>
+[ask] Ok, I'll go with you|I prefer to make my own way
+
+!I'm a visitor coming from the future
+>
+              Of course, I knew that but that's not exactly what I wanted to ear.
+              Let's pretend nothing happened.
+        I'm sending you back to the gates.
+
+>
+[goto] Go to see the gates of SilverHeart
+
+# You decide to go alone
+!I prefer to make my own way
+>
+[bgColor] black
+>
+           Well    well    Well
+             As you wish.
+>
+[color] #d9d9d9
+>
+You start walking in the darkness            ...
+            Then you ear a small noice                coming closer to you !
+>
+[color] red
+>
+ggggggggggggggggsssssssbbbbbbbbbb !
+           Stdedp rait            whair u       har           ...
+>
+[color] #d9d9d9
+>
+A strange red form is moving toward you
+            You look but you can't say what is this form
+>
+[ask] Flee|Fight
+
+# You flee against the red form
+!Flee
+>
+You start running on the opposite side               but you start feeling weak.
+               Like if you,    and the world             were              fading     ...
+>
+You can't feel your legs and your hands vanished.
+>
+[die] Your entire body disassembled into dust
+
+# You fight
+!Fight
+>
+You punch the red thing              ...
+        It fell.
 >
 [bgColor] #d9d9d9
 >
-As you can see, I reversed the colors
+[color] purple
 >
-[ask] Take me to the win !|Let's see dying feels like
+You made the biggest mistake you could have done you stupid wizard !
+                   I saw you poping out of the void and kill my first creation !
+              I tought God's creation and mine were made to live together ...
+                 I see I was wrong !                         They're going to fight till death for          e    t    e    r    n    i    t    y
+                    And of course, you die.
+>
+[bgColor] black
+>
+[die] Well, It seems you died.
 
-# When you get outside
-!Take me to the win !
+# You go with Robert
+!Ok, I'll go with you
 >
-Let me show you a way out
+You made a good choice !                  I haven't finished the world creation so some part might have some problems.
+             Like random disparition or stuffs like that ...
+               Ok I'm taking you.
 >
-[win] You won!
-
-# When you stay
-!Let's see dying feels like
+[bgColor] black
 >
-This is the path where you die
+[color] #d9d9d9
 >
-[die] This is Hell
+You're now in Robert body.
+           It's kind of black but you stil ear what is outside.
+          It's not loud but you ear something in the distance    ...
+>
+[color] purple
+>
+I see I was wrong !                         They're going to fight till death for          e    t    e    r    n    i    t    y
+            And of course, you die.
+>
+[color] white
+>
+(Robert) What just happened Purple One ?
+              Did you just killed this one ?
+>
+[color] purple
+>
+(Purple One) Yes !                This wizard killed my first human try       !
+            Your wizards can't control themself,               I'll create soldier to kill them
+                Then kill you !
+>
+[bgColor] white
+>
+[color] black
+>
+You hear a big spell noice            
+>
+[win] You got expulsed from the world

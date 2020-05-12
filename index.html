@@ -38,15 +38,16 @@
 
     <div class="menu" id="menu">
       <div class="container">
-        <h1>Melgen</h1>
-        <h2>Story reader generator</h2>
-        <h4>Put your file and click on generate to start reading.</h4>
+        <h1 style="font-size: 500%">Melgen</h1>
+        <h3><i> - Story reader - </i></h3>
+        <br><br>
+        <p>Put your .mel file and click on generate to start the reading.</p>
         <br>
         <form onsubmit="return generate();">
           <p>
-            Story file :
-            <input type='file' accept='text/plain' onchange='openFile(event)'>
+            <input type='file' accept='.mel' onchange='openFile(event)'>
           </p>
+          <br><br>
           <input type="submit" name="" value="Generate">
         </form>
       </div>
@@ -58,6 +59,10 @@
           <header class="bp-header cf">
             <span id="storyTitle" class="bp-header__present w3-animate-left"></span>
           </header>
+
+          <div class="footer">
+
+          </div>
 
           <div id="myModal" class="modal">
             <div class="modal-content">
