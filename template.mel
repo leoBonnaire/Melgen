@@ -7,7 +7,7 @@
 ## Settings ##
 
 # Title of the text
-- Title : Melgen
+- Title : Melgen Template
 
 # Default color for the text (hex)
 - Color : #d9d9d9
@@ -30,18 +30,18 @@
 Hello World !
 It's time to choose
 >
-[ask] Take me to the other side !|Inside
+[ask] Take me to the win !|Let's see dying feels like
 
 # When you get outside
 !Take me to the other side !
 >
-Ok then
+Let me show you a way out
 >
-[win] Hell yeah
+[win] You won!
 
 # When you stay
-!Inside
+!Let's see dying feels like
 >
-Ok then
+This is the path where you die
 >
-[die] Hell yeah
+[die] This is Hell
